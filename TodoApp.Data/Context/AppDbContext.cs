@@ -26,7 +26,7 @@ namespace TodoApp.Data.Context
 				entity.Property(e => e.Title).IsRequired().HasMaxLength(255);
 			});
 		}
-
+		
 		public DbSet<Todo> Todos { get; set; }
 	}
 }
