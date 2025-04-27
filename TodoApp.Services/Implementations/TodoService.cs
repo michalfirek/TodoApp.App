@@ -62,9 +62,17 @@ namespace TodoApp.Services.Implementations
 			};
 		}
 
-		public Task UpdateTodoAsync(TodoDto todo)
+		public async Task UpdateTodoAsync(TodoDto todo)
 		{
-			throw new NotImplementedException();
+			var entity = await _todoRepository.GetByIdAsync(todo.Id);
+			if (entity != null)
+			{
+				entity.Title = todo.Title;
+				entity.Description = todo.Description;
+				entity.IsDone = todo.IsDone;
+
+				await _todoRepository.UpdateAsync(entity);
+			}
 		}
 	}
 }
