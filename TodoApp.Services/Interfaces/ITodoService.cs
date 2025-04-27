@@ -8,7 +8,7 @@ using TodoApp.Services.DTOs;
 
 namespace TodoApp.Services.Interfaces
 {
-	interface ITodoService
+	public interface ITodoService
 	{
 		public Task<List<TodoDto>> GetAllTodosAsync();
 		public Task<TodoDto> GetTodoByIdAsync(int id);

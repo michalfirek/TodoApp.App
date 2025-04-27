@@ -10,7 +10,10 @@
 
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TodoApp.Services\TodoApp.Services.csproj" />
   </ItemGroup>
 
 </Project>
