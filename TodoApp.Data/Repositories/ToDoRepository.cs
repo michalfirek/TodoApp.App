@@ -9,7 +9,7 @@ using TodoApp.Data.Model;
 
 namespace TodoApp.Data.Repositories
 {
-	class ToDoRepository
+	public class ToDoRepository
 	{
 		private readonly AppDbContext _context;
 

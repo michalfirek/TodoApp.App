@@ -8,7 +8,7 @@ using TodoApp.Data.Model;
 
 namespace TodoApp.Data.Context
 {
-	class AppDbContext: DbContext
+	public class AppDbContext: DbContext
 	{
 		// Domyślne połączenie z SQLite
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
