@@ -7,20 +7,25 @@ using TodoApp.Services.DTOs;
 using TodoApp.Services.Interfaces;
 using TodoApp.Data.Repositories;
 using TodoApp.Data.Model;
+using TodoApp.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace TodoApp.Services.Implementations
 {
 	public class TodoService : ITodoService
 	{
 		private readonly ToDoRepository _todoRepository;
+		private AppDbContext db =new();
 
 		public TodoService(ToDoRepository todoRepository)
 		{
 			_todoRepository = todoRepository;
+			db.Database.Migrate();
 		}
 
 		public async Task AddTodoAsync(TodoDto todo)
 		{
+			
 			var entity = new Todo
 			{
 				Title = todo.Title,

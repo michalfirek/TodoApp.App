@@ -14,7 +14,8 @@ namespace TodoApp.Data.Context
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			// Plik bazy SQLite.db będzie w lokalizacji obok aplikacji
-			optionsBuilder.UseSqlite("Data Source=todo.db");
+			optionsBuilder.UseSqlite("Data Source=todo.db")
+				.EnableSensitiveDataLogging();
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
