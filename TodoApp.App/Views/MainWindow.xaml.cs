@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using TodoApp.App.ViewModels;
 using TodoApp.Services.Interfaces;
 
-namespace TodoApp.App;
+namespace TodoApp.App.Views;
 
 public partial class MainWindow : Window
 {

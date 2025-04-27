@@ -10,7 +10,7 @@ using TodoApp.Data.Model;
 
 namespace TodoApp.Services.Implementations
 {
-	class TodoService : ITodoService
+	public class TodoService : ITodoService
 	{
 		private readonly ToDoRepository _todoRepository;
 
