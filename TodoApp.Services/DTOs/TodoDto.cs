@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TodoApp.Data.Model
+namespace TodoApp.Services.DTOs
 {
-	public class Todo
+	public class TodoDto
 	{
 		public int Id { get; set; }
 		public string Title { get; set; }

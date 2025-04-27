@@ -8,13 +8,14 @@ using TodoApp.Data.Model;
 
 namespace TodoApp.Data.Context
 {
-	class AppDbContext: DbContext
+	public class AppDbContext: DbContext
 	{
 		// Domyślne połączenie z SQLite
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			// Plik bazy SQLite.db będzie w lokalizacji obok aplikacji
-			optionsBuilder.UseSqlite("Data Source=todo.db");
+			optionsBuilder.UseSqlite("Data Source=todo.db")
+				.EnableSensitiveDataLogging();
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -26,7 +27,7 @@ namespace TodoApp.Data.Context
 				entity.Property(e => e.Title).IsRequired().HasMaxLength(255);
 			});
 		}
-
+		
 		public DbSet<Todo> Todos { get; set; }
 	}
 }

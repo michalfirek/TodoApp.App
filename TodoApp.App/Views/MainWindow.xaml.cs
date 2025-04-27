@@ -8,13 +8,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TodoApp.App.ViewModels;
+using TodoApp.Services.Interfaces;
 
-namespace TodoApp.App;
+namespace TodoApp.App.Views;
 
 public partial class MainWindow : Window
 {
-    public MainWindow()
-    {
-        InitializeComponent();
-    }
+	public MainWindow(ITodoService todoService)
+	{
+		InitializeComponent();
+		DataContext = new MainViewModel(todoService);
+	}
 }
